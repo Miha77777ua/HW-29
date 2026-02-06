@@ -11,8 +11,8 @@ export const rootReducer = (state = initialState, action) => {
       localStorage.setItem("contacts", JSON.stringify(newContacts));
 
       return { ...state, contacts: newContacts, };
-    case "contacts/deletContact":
-      const redactedContacts = contacts.filter(el => el.name !== ev.target.parentElement.dataset.name);
+    case "contacts/deleteContact":
+      const redactedContacts = state.contacts.filter(el => el.name !== action.payload);
 
       localStorage.setItem("contacts", JSON.stringify(redactedContacts));
 
