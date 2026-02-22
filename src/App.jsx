@@ -12,7 +12,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(updateContacts);
+    dispatch(updateContacts("contacts"));
   }, []);
 
   const handleSubmit = (ev, clearState) => {
