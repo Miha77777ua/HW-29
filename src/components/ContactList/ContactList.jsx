@@ -3,8 +3,8 @@ import { Contact } from "./Contact/Contact";
 import style from "./ContactList.module.scss";
 
 export function ContactList({ handleDelete }) {
-  const contacts = useSelector(store => store.contacts);
-  const filter = useSelector(store => store.filter);
+  const contacts = useSelector(store => store.contacts.contacts);
+  const filter = useSelector(store => store.filter.filter);
 
   return (
     <>

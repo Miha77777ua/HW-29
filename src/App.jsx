@@ -5,10 +5,11 @@ import { Filtration } from "./components/Filtration/Filtration";
 import style from "./App.module.scss";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateContacts, addContact, deleteContact, changeFilter } from "./redux/actions";
+import { addContact, deleteContact, updateContacts } from "./redux/contactsSlice";
+import { changeFilter } from "./redux/filterSlice";
 
 function App() {
-  const contacts = useSelector(store => store.contacts);
+  const contacts = useSelector(store => store.contacts.contacts);
   const dispatch = useDispatch();
 
   useEffect(() => {

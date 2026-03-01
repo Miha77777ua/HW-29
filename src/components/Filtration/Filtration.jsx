@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import style from "./Filtration.module.scss";
 
 export function Filtration({ handleFiltration }) {
-  const filter = useSelector(store => store.filter);
+  const filter = useSelector(store => store.filter.filter);
 
   return (
     <div className={style.filtration}>
