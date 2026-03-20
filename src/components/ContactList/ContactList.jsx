@@ -8,17 +8,17 @@ export function ContactList({ handleDelete }) {
 
   return (
     <>
-      {contacts[0] === undefined
+      {contacts.items[0] === undefined
         ? <p className={style.none}>No contacts!</p>
         : <ul className={style.contacts}>
-          {contacts.filter(el => {
+          {contacts.items.filter(el => {
             if (filter !== "") {
               return el.name.toLowerCase().includes(filter.toLowerCase());
             } else {
               return true;
             }
           }).map((el, id) => (
-            <Contact name={el.name} number={el.number} key={id} handleDelete={handleDelete} />
+            <Contact name={el.name} id={el.id} number={el.number} key={id} handleDelete={handleDelete} />
           ))}
         </ul>}
     </>
